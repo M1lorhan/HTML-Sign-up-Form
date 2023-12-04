@@ -15,24 +15,31 @@
         <form method="GET" action="results.html"> <!-- TODO: Set Action and Method Properties -->
             <div>
                 <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
+                <span class ="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" maxlength="35" minlength="2" required>
                 
             <!-- TODO: Create a "lastname" input with type "text" -->
                 <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <span class ="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" maxlength="35" minlength="2" required>
+
+                <label for="age">Your Age</label>
+                <input type="number" name="age" id="age" min="21" max="120">
+                <h5>note: Must be age 21 or older to enter the contest</h5>
             </div>
             <!-- TODO: Make fieldset and legend -->
             <fieldset>
                <legend>Your Contact Info</legend> 
                
                <label for="email">Your Email</label>
-               <input type="email" id="email" name="email"/>
+               <span class="required-field">*</span>
+               <input type="email" id="email" name="email" required>
                
                <label for="street address">Your Street Address</label>
                <input type="text" id="street address" name="street address" value="1234 Fake Street Lane, Suite 400"/>
 
                <label for="city">Your City</label>
-               <input type="text" id="city" name="city" value="Boston"/>
+               <input type="text" id="city" name="city" value="Boston">
                
                <label for="state">Your State</label>
                <input type="datalist" name="state" list="state-list">
@@ -91,7 +98,8 @@
                 </select>
   
                <label for="zipcode">Your Zipcode</label>
-               <input type="text" id="zipcode" name="zipcode" value="12345"/>
+               <input type="text" id="zipcode" name="zipcode" value="12345"
+               pattern="[0-9]{5}" title="5-digit US Zipcode">
             </fieldset>
                 
             <!-- TODO: Second fieldset -->
@@ -114,28 +122,43 @@
                 <div>
                     <input type="radio" id="new-zealand" name="location" value="New Zealand"> 
                     <label for="new-zealand">New Zealand</label>
-                </div>
+                </div><br>
             <!-- TODO: Color input for selecting favorite color -->           
                 <div>
                     <label for="color">Favorite Color</label>
                     <input type="color" id="color" name="color">
-                </div> 
+                </div><br>
+             
                 <!-- TODO: Checkboxes for selecting extra add-ons -->
+                <div>
                 <Legend>Extras</Legend>
                     <input type="checkbox" id="extras" name="extras" checked>
                     <label for="extras">Sauna Access</label><br>
+                    
                     <input type="checkbox" id="extras" name="extras">
                     <label for="extras">In-room Hot Tub</label><br>
+                    
                     <input type="checkbox" id="extras" name="extras">
                     <label for="extras">All-Inclusive</label><br>
+                    
                     <input type="checkbox" id="extras" name="extras">
                     <label for="extras">Pet Friendly</label><br>
+                </div><br>
+
+                <div>
+                    <label for="Passcode">Your Secret Code (must be 6 alphanumeric characters)</label>
+                    <span class ="required-field">*</span>
+                    <input type="password" title="6 Alphanumeric Character Passcode"
+                    pattern="{6}[0-9][A-Za-z]" required>
+
                 </div>
+
+
             </fieldset>
 
             <!-- TODO: Submit Button -->
             <input type="submit" value="Enter the Contest">
-
+           
         </form>
     </main>
     <footer>
